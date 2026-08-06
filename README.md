@@ -22,6 +22,10 @@ Este é um projeto de portfólio pessoal, desenvolvido com dados públicos, sem 
 
 vínculo com as empresas analisadas.
 
+**Pergunta central do projeto:** Como está evoluindo a posição competitiva das principais
+seguradoras no mercado brasileiro de Seguro Auto — em termos de participação de mercado,
+crescimento e sinistralidade — e quais tendências recentes sinalizam oportunidades ou
+riscos estratégicos?
 
 
 ## Contexto e problema de negócio
@@ -130,7 +134,7 @@ reproduzi-los:
 
 
 
-## Arquitetura6 da solução
+## Arquitetura da solução
 
 
 
@@ -220,7 +224,7 @@ Decisões de design:
 
 - [ ] Análise Exploratória (EDA) aprofundada
 
-- [ ] Consultas SQL analíticas (market share, ranking, evolução temporal)
+- [x] Consultas SQL analíticas (market share, ranking, evolução temporal, sinistralidade)
 
 - [ ] Dashboard executivo no Power BI
 
@@ -266,9 +270,32 @@ identificados e corrigidos:
 
 ## Insights estratégicos
 
+*Baseado em análises SQL sobre prêmio direto e sinistralidade, 2021–2025 (2026 excluído
+por ser um ano parcial nos dados disponíveis).*
 
+**Porto consolida liderança de forma acelerada.** A participação de mercado da Porto
+subiu de ~30% (2021) para ~36% (2025), com um salto expressivo justamente em 2025
+(+42% de crescimento no prêmio direto frente a 2024). A empresa também apresentou a
+menor sinistralidade do grupo em 2021 (50,6%), sugerindo que o crescimento recente não
+veio apenas de agressividade comercial, mas de uma base operacional historicamente
+eficiente.
 
-*A ser preenchido após a etapa de EDA e cálculo dos KPIs.*
+**Mapfre perde participação de forma sustentada, mas mantém disciplina de sinistralidade.**
+A Mapfre caiu de ~13% para ~8% de market share entre 2021 e 2025, com crescimento negativo
+em dois dos últimos três anos — e permaneceu na 5ª posição do ranking em todos os anos
+analisados. Ainda assim, apresentou a menor sinistralidade do grupo em 2024 e 2025,
+levantando a hipótese de uma estratégia deliberada de priorizar rentabilidade sobre
+volume, em vez de simples perda de competitividade.
+
+**Tokio Marine mudou de patamar competitivo em 2022 e não voltou atrás.** Saiu da 4ª
+posição do ranking em 2021 para a 2ª já em 2022 (crescimento de +62% no prêmio direto
+naquele ano) e manteve essa posição em todos os anos seguintes — a mudança de
+posicionamento mais nítida identificada no período.
+
+**Allianz opera com a maior sinistralidade do setor em todos os anos analisados**
+(entre 64% e 84%), o que provavelmente restringe sua capacidade de crescer de forma tão
+agressiva quanto Porto ou Tokio Marine, mesmo mantendo uma participação de mercado
+relevante (18–21%).
 
 
 
