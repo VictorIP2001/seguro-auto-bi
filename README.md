@@ -42,25 +42,25 @@ ambiente analítico único, permitindo acompanhar indicadores estratégicos do s
 
 
 
-Análise exclusiva do ramo de \*\*Seguro Auto\*\*, cobrindo as linhas:
+Análise exclusiva do ramo de **Seguro Auto**, cobrindo as linhas:
 
-\- 0531 — Automóvel (Casco)
+- 0531 — Automóvel (Casco)
 
-\- 0553 — R.C. Facultativa de Veículos (RCFV)
+- 0553 — R.C. Facultativa de Veículos (RCFV)
 
-\- 0524 — Garantia Estendida Auto
+- 0524 — Garantia Estendida Auto
 
-\- 0526 — Seguro Popular de Auto Usado (RUN OFF)
+- 0526 — Seguro Popular de Auto Usado (RUN OFF)
 
-\- 0542 — Assistência e Outras Coberturas Auto
-
-
-
-\*\*Seguradoras analisadas:\*\* Bradesco Seguros Auto/RE, Porto, Tokio Marine, Allianz e Mapfre.
+- 0542 — Assistência e Outras Coberturas Auto
 
 
 
-\*\*Período:\*\* janeiro/2021 a maio/2026 (65 meses). Junho/2026 não está disponível — a
+**Seguradoras analisadas:** Bradesco Seguros Auto/RE, Porto, Tokio Marine, Allianz e Mapfre.
+
+
+
+**Período:** janeiro/2021 a maio/2026 (65 meses). Junho/2026 não está disponível — a
 
 SUSEP publica os dados com uma defasagem de 1–2 meses.
 
@@ -70,7 +70,7 @@ SUSEP publica os dados com uma defasagem de 1–2 meses.
 
 
 
-\[SUSEP — Sistema de Estatísticas SES](https://www2.susep.gov.br/menuestatistica/ses/principal.aspx),
+[SUSEP — Sistema de Estatísticas SES](https://www2.susep.gov.br/menuestatistica/ses/principal.aspx),
 
 consulta "Seguros: Prêmios e Sinistros", filtrada por empresa e pelos ramos de Auto
 
@@ -88,11 +88,11 @@ reproduzi-los:
 
 
 
-1\. Acesse a ferramenta SES da SUSEP (link acima)
+1. Acesse a ferramenta SES da SUSEP (link acima)
 
-2\. Em "Consultas sobre: Operações" → "Seguros: Prêmios e Sinistros"
+2. Em "Consultas sobre: Operações" → "Seguros: Prêmios e Sinistros"
 
-3\. Para cada seguradora, selecione \*\*apenas o código dela\*\* no filtro Empresa:
+3. Para cada seguradora, selecione **apenas o código dela** no filtro Empresa:
 
 
 
@@ -112,19 +112,19 @@ reproduzi-los:
 
 
 
-4\. No filtro Ramo, selecione apenas: `0524, 0526, 0531, 0542, 0553`
+4. No filtro Ramo, selecione apenas: `0524, 0526, 0531, 0542, 0553`
 
-5\. Período: `202101` a `202606` (ou período mais recente disponível)
+5. Período: `202101` a `202606` (ou período mais recente disponível)
 
-6\. Quebra por mês/competência
+6. Quebra por mês/competência
 
-7\. Exporte e salve em `data/raw/`
+7. Exporte e salve em `data/raw/`
 
 
 
 > ⚠️ Atenção: ao selecionar múltiplas empresas numa mesma consulta, a SUSEP retorna os
 
-> valores \*\*somados\*\*, sem coluna de origem — não é possível separar depois. Sempre
+> valores **somados**, sem coluna de origem — não é possível separar depois. Sempre
 
 > consultar uma empresa por vez.
 
@@ -150,7 +150,7 @@ PostgreSQL (Docker) — modelo dimensional
 
 ↓
 
-Power BI — dashboard executivo \[ainda não construído]
+Power BI — dashboard executivo [ainda não construído]
 
 
 
@@ -162,29 +162,29 @@ Modelo dimensional simples (dimensão + fato):
 
 
 
-\- \*\*`dim\_empresa`\*\* — cadastro das seguradoras analisadas (código SUSEP, nome)
+- **`dim_empresa`** — cadastro das seguradoras analisadas (código SUSEP, nome)
 
-\- \*\*`fato\_premios\_sinistros\_auto`\*\* — métricas mensais de prêmios e sinistros de Auto por
+- **`fato_premios_sinistros_auto`** — métricas mensais de prêmios e sinistros de Auto por
 
 &#x20; empresa (prêmio direto, prêmio retido, prêmio ganho, sinistros, sinistralidade, etc.)
 
 
 
-Ver DDL completa em \[`sql/01\_create\_tables.sql`](sql/01\_create\_tables.sql).
+Ver DDL completa em [`sql/01_create_tables.sql`](sql/01_create_tables.sql).
 
 
 
 Decisões de design:
 
-\- `NUMERIC(18,2)` em vez de `FLOAT` para valores financeiros, evitando erro de
+- `NUMERIC(18,2)` em vez de `FLOAT` para valores financeiros, evitando erro de
 
 &#x20; arredondamento
 
-\- Constraint `UNIQUE (id\_empresa, competencia)` protegendo contra duplicidade de carga
+- Constraint `UNIQUE (id_empresa, competencia)` protegendo contra duplicidade de carga
 
-\- Índices em `competencia` e `id\_empresa`, colunas mais usadas em filtros/agrupamentos
+- Índices em `competencia` e `id_empresa`, colunas mais usadas em filtros/agrupamentos
 
-\- DDL idempotente (`CREATE TABLE IF NOT EXISTS`), permitindo reexecução segura
+- DDL idempotente (`CREATE TABLE IF NOT EXISTS`), permitindo reexecução segura
 
 
 
@@ -192,15 +192,15 @@ Decisões de design:
 
 
 
-\- \*\*Python\*\* (pandas, SQLAlchemy) — extração, limpeza e carga dos dados
+- **Python** (pandas, SQLAlchemy) — extração, limpeza e carga dos dados
 
-\- \*\*PostgreSQL 16\*\* (via Docker) — armazenamento e modelagem
+- **PostgreSQL 16** (via Docker) — armazenamento e modelagem
 
-\- \*\*Jupyter Notebook\*\* (via VS Code) — desenvolvimento exploratório do pipeline
+- **Jupyter Notebook** (via VS Code) — desenvolvimento exploratório do pipeline
 
-\- \*\*Power BI\*\* — dashboard executivo \*(próxima etapa)\*
+- **Power BI** — dashboard executivo *(próxima etapa)*
 
-\- \*\*Git/GitHub\*\* — versionamento e portfólio
+- **Git/GitHub** — versionamento e portfólio
 
 
 
@@ -208,25 +208,25 @@ Decisões de design:
 
 
 
-\- \[x] Definição de escopo e validação da disponibilidade dos dados
+- [x] Definição de escopo e validação da disponibilidade dos dados
 
-\- \[x] Infraestrutura: PostgreSQL via Docker + conexão via DBeaver
+- [x] Infraestrutura: PostgreSQL via Docker + conexão via DBeaver
 
-\- \[x] Extração dos dados (SUSEP, filtrados por empresa e ramo de Auto)
+- [x] Extração dos dados (SUSEP, filtrados por empresa e ramo de Auto)
 
-\- \[x] Pipeline de ETL em Python (limpeza, padronização, carga)
+- [x] Pipeline de ETL em Python (limpeza, padronização, carga)
 
-\- \[x] Modelagem de dados e carga no PostgreSQL (325 registros: 5 empresas × 65 meses)
+- [x] Modelagem de dados e carga no PostgreSQL (325 registros: 5 empresas × 65 meses)
 
-\- \[ ] Análise Exploratória (EDA) aprofundada
+- [ ] Análise Exploratória (EDA) aprofundada
 
-\- \[ ] Consultas SQL analíticas (market share, ranking, evolução temporal)
+- [ ] Consultas SQL analíticas (market share, ranking, evolução temporal)
 
-\- \[ ] Dashboard executivo no Power BI
+- [ ] Dashboard executivo no Power BI
 
-\- \[ ] Storytelling e insights estratégicos
+- [ ] Storytelling e insights estratégicos
 
-\- \[ ] Post de divulgação no LinkedIn
+- [ ] Post de divulgação no LinkedIn
 
 
 
@@ -240,25 +240,25 @@ identificados e corrigidos:
 
 
 
-\- A ferramenta de exportação da SUSEP soma os valores quando múltiplas empresas são
+- A ferramenta de exportação da SUSEP soma os valores quando múltiplas empresas são
 
 &#x20; selecionadas na mesma consulta, sem manter identificação de origem — exigiu reexportar
 
 &#x20; consultas feitas incorretamente
 
-\- Os arquivos `.xls` da SUSEP são, na verdade, tabelas HTML com extensão `.xls`,
+- Os arquivos `.xls` da SUSEP são, na verdade, tabelas HTML com extensão `.xls`,
 
-&#x20; exigindo `pandas.read\_html()` em vez de `pandas.read\_excel()`
+&#x20; exigindo `pandas.read_html()` em vez de `pandas.read_excel()`
 
-\- Valores monetários vêm no formato textual brasileiro (`292.641.308`), exigindo
+- Valores monetários vêm no formato textual brasileiro (`292.641.308`), exigindo
 
 &#x20; conversão explícita para numérico
 
-\- Cada exportação inclui uma linha de "Totais" que precisa ser removida antes de
+- Cada exportação inclui uma linha de "Totais" que precisa ser removida antes de
 
 &#x20; qualquer conversão de tipos
 
-\- Um erro na string de conexão do SQLAlchemy usando `localhost` causava travamentos no
+- Um erro na string de conexão do SQLAlchemy usando `localhost` causava travamentos no
 
 &#x20; Windows (resolvido usando `127.0.0.1`)
 
@@ -268,7 +268,7 @@ identificados e corrigidos:
 
 
 
-\*A ser preenchido após a etapa de EDA e cálculo dos KPIs.\*
+*A ser preenchido após a etapa de EDA e cálculo dos KPIs.*
 
 
 
@@ -276,7 +276,7 @@ identificados e corrigidos:
 
 
 
-\*A ser preenchido ao final do projeto.\*
+*A ser preenchido ao final do projeto.*
 
 
 
@@ -284,11 +284,11 @@ identificados e corrigidos:
 
 
 
-1\. Consultas SQL analíticas (window functions, ranking, market share)
+1. Consultas SQL analíticas (window functions, ranking, market share)
 
-2\. Análise exploratória aprofundada
+2. Análise exploratória aprofundada
 
-3\. Dashboard executivo no Power BI
+3. Dashboard executivo no Power BI
 
-4\. Post de divulgação no LinkedIn
+4. Post de divulgação no LinkedIn
 
