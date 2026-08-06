@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: seguro_auto_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: analista
+      POSTGRES_PASSWORD: senha_dev_123
+      POSTGRES_DB: seguro_auto
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
