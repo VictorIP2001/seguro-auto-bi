@@ -1,4 +1,4 @@
-\# Inteligência Competitiva do Mercado Brasileiro de Seguro Auto
+# Inteligência Competitiva do Mercado Brasileiro de Seguro Auto
 
 
 
@@ -6,7 +6,7 @@
 
 
 
-\## Sobre o projeto
+## Sobre o projeto
 
 
 
@@ -24,7 +24,7 @@ vínculo com as empresas analisadas.
 
 
 
-\## Contexto e problema de negócio
+## Contexto e problema de negócio
 
 
 
@@ -38,7 +38,7 @@ ambiente analítico único, permitindo acompanhar indicadores estratégicos do s
 
 
 
-\## Escopo
+## Escopo
 
 
 
@@ -66,7 +66,7 @@ SUSEP publica os dados com uma defasagem de 1–2 meses.
 
 
 
-\## Fonte dos dados
+## Fonte dos dados
 
 
 
@@ -78,7 +78,7 @@ listados acima, com quebra mensal.
 
 
 
-\### Como reproduzir os dados brutos
+### Como reproduzir os dados brutos
 
 
 
@@ -130,7 +130,7 @@ reproduzi-los:
 
 
 
-\## Arquitetura6 da solução
+## Arquitetura6 da solução
 
 
 
@@ -154,7 +154,7 @@ Power BI — dashboard executivo \[ainda não construído]
 
 
 
-\## Modelo de dados
+## Modelo de dados
 
 
 
@@ -188,7 +188,7 @@ Decisões de design:
 
 
 
-\## Tecnologias utilizadas
+## Tecnologias utilizadas
 
 
 
@@ -204,7 +204,7 @@ Decisões de design:
 
 
 
-\## Etapas do desenvolvimento
+## Etapas do desenvolvimento
 
 
 
@@ -230,7 +230,7 @@ Decisões de design:
 
 
 
-\## Principais desafios encontrados
+## Principais desafios encontrados
 
 
 
@@ -264,7 +264,7 @@ identificados e corrigidos:
 
 
 
-\## Insights estratégicos
+## Insights estratégicos
 
 
 
@@ -272,7 +272,7 @@ identificados e corrigidos:
 
 
 
-\## Aprendizados
+## Aprendizados
 
 
 
@@ -280,7 +280,7 @@ identificados e corrigidos:
 
 
 
-\## Próximos passos
+## Próximos passos
 
 
 
