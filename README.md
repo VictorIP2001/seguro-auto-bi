@@ -10,41 +10,18 @@
 
 
 
-Estudo de caso de Business Intelligence que analisa o mercado brasileiro de Seguro Auto,
+Estudo de caso de Business Intelligence que analisa o mercado brasileiro de Seguro Auto, utilizando dados públicos da SUSEP, com o objetivo de comparar o desempenho de grandes seguradoras e responder perguntas estratégicas de negócio.
 
-utilizando dados públicos da SUSEP, com o objetivo de comparar o desempenho de grandes
+Este é um projeto de portfólio pessoal, desenvolvido com dados públicos, sem qualquer vínculo com as empresas analisadas.
 
-seguradoras e responder perguntas estratégicas de negócio.
-
-
-
-Este é um projeto de portfólio pessoal, desenvolvido com dados públicos, sem qualquer
-
-vínculo com as empresas analisadas.
-
-**Pergunta central do projeto:** Como está evoluindo a posição competitiva das principais
-seguradoras no mercado brasileiro de Seguro Auto — em termos de participação de mercado,
-crescimento e sinistralidade — e quais tendências recentes sinalizam oportunidades ou
-riscos estratégicos?
+**Pergunta central do projeto:** Como está evoluindo a posição competitiva das principais seguradoras no mercado brasileiro de Seguro Auto — em termos de participação de mercado, crescimento e sinistralidade — e quais tendências recentes sinalizam oportunidades ou riscos estratégicos?
 
 
 ## Contexto e problema de negócio
 
-
-
-As informações do mercado de Seguro Auto no Brasil estão distribuídas em bases públicas
-
-da SUSEP, o que dificulta análises comparativas e o acompanhamento da evolução das
-
-principais seguradoras ao longo do tempo. Este projeto consolida esses dados em um
-
-ambiente analítico único, permitindo acompanhar indicadores estratégicos do setor.
-
-
+As informações do mercado de Seguro Auto no Brasil estão distribuídas em bases públicas da SUSEP, o que dificulta análises comparativas e o acompanhamento da evolução das principais seguradoras ao longo do tempo. Este projeto consolida esses dados em um ambiente analítico único, permitindo acompanhar indicadores estratégicos do setor.
 
 ## Escopo
-
-
 
 Análise exclusiva do ramo de **Seguro Auto**, cobrindo as linhas:
 
@@ -58,11 +35,7 @@ Análise exclusiva do ramo de **Seguro Auto**, cobrindo as linhas:
 
 - 0542 — Assistência e Outras Coberturas Auto
 
-
-
 **Seguradoras analisadas:** Bradesco Seguros Auto/RE, Porto, Tokio Marine, Allianz e Mapfre.
-
-
 
 **Período:** janeiro/2021 a maio/2026 (65 meses). Junho/2026 não está disponível — a
 
@@ -270,22 +243,12 @@ identificados e corrigidos:
 
 ## Insights estratégicos
 
-*Baseado em análises SQL sobre prêmio direto e sinistralidade, 2021–2025 (2026 excluído
-por ser um ano parcial nos dados disponíveis).*
+*Baseado em análises SQL sobre prêmio direto e sinistralidade, 2021–2025 (2026 excluído por ser um ano parcial nos dados disponíveis).*
 
-**Porto consolida liderança de forma acelerada.** A participação de mercado da Porto
-subiu de ~30% (2021) para ~36% (2025), com um salto expressivo justamente em 2025
-(+42% de crescimento no prêmio direto frente a 2024). A empresa também apresentou a
-menor sinistralidade do grupo em 2021 (50,6%), sugerindo que o crescimento recente não
-veio apenas de agressividade comercial, mas de uma base operacional historicamente
-eficiente.
+**Porto consolida liderança de forma acelerada.** A participação de mercado da Porto subiu de ~30% (2021) para ~36% (2025), com um salto expressivo justamente em 2025 (+42% de crescimento no prêmio direto frente a 2024). A empresa também apresentou a menor sinistralidade do grupo em 2021 (50,6%), sugerindo que o crescimento recente não veio apenas de agressividade comercial, mas de uma base operacional historicamente eficiente.
 
 **Mapfre perde participação de forma sustentada, mas mantém disciplina de sinistralidade.**
-A Mapfre caiu de ~13% para ~8% de market share entre 2021 e 2025, com crescimento negativo
-em dois dos últimos três anos — e permaneceu na 5ª posição do ranking em todos os anos
-analisados. Ainda assim, apresentou a menor sinistralidade do grupo em 2024 e 2025,
-levantando a hipótese de uma estratégia deliberada de priorizar rentabilidade sobre
-volume, em vez de simples perda de competitividade.
+A Mapfre caiu de ~13% para ~8% de market share entre 2021 e 2025, com crescimento negativo em dois dos últimos três anos — e permaneceu na 5ª posição do ranking em todos os anos analisados. Ainda assim, apresentou a menor sinistralidade do grupo em 2024 e 2025, levantando a hipótese de uma estratégia deliberada de priorizar rentabilidade sobre volume, em vez de simples perda de competitividade.
 
 **Tokio Marine mudou de patamar competitivo em 2022 e não voltou atrás.** Saiu da 4ª
 posição do ranking em 2021 para a 2ª já em 2022 (crescimento de +62% no prêmio direto
@@ -293,11 +256,7 @@ naquele ano) e manteve essa posição em todos os anos seguintes — a mudança 
 posicionamento mais nítida identificada no período.
 
 **Allianz opera com a maior sinistralidade do setor em todos os anos analisados**
-(entre 64% e 84%), o que provavelmente restringe sua capacidade de crescer de forma tão
-agressiva quanto Porto ou Tokio Marine, mesmo mantendo uma participação de mercado
-relevante (18–21%).
-
-
+(entre 64% e 84%), o que provavelmente restringe sua capacidade de crescer de forma tão agressiva quanto Porto ou Tokio Marine, mesmo mantendo uma participação de mercado relevante (18–21%).
 
 ## Aprendizados
 
@@ -309,8 +268,6 @@ relevante (18–21%).
 
 ## Próximos passos
 
-
-
 1. Consultas SQL analíticas (window functions, ranking, market share)
 
 2. Análise exploratória aprofundada
@@ -318,4 +275,3 @@ relevante (18–21%).
 3. Dashboard executivo no Power BI
 
 4. Post de divulgação no LinkedIn
-
