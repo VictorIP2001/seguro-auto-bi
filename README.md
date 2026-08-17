@@ -199,7 +199,7 @@ Decisões de design:
 
 - [x] Consultas SQL analíticas (market share, ranking, evolução temporal, sinistralidade)
 
-- [ ] Dashboard executivo no Power BI
+- [x] Dashboard executivo no Power BI
 
 - [ ] Storytelling e insights estratégicos
 
